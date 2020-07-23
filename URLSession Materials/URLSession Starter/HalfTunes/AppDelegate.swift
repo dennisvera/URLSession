@@ -61,7 +61,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   private func customizeAppearance() {
     window?.tintColor = tintColor
     
-    UISearchBar.appearance().barTintColor = tintColor
+    UISearchBar.appearance().barTintColor = .black
     
     UINavigationBar.appearance().barTintColor = tintColor
     UINavigationBar.appearance().tintColor = UIColor.white

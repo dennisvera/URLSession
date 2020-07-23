@@ -28,9 +28,8 @@
 
 import UIKit
 
-//
 // MARK: - Track Cell Delegate Protocol
-//
+
 protocol TrackCellDelegate {
   func cancelTapped(_ cell: TrackCell)
   func downloadTapped(_ cell: TrackCell)
@@ -38,18 +37,16 @@ protocol TrackCellDelegate {
   func resumeTapped(_ cell: TrackCell)
 }
 
-//
 // MARK: - Track Cell
-//
+
 class TrackCell: UITableViewCell {
-  //
+
   // MARK: - Class Constants
-  //
+
   static let identifier = "TrackCell"
   
-  //
   // MARK: - IBOutlets
-  //
+  
   @IBOutlet weak var artistLabel: UILabel!
   @IBOutlet weak var cancelButton: UIButton!
   @IBOutlet weak var downloadButton: UIButton!
@@ -58,17 +55,14 @@ class TrackCell: UITableViewCell {
   @IBOutlet weak var progressView: UIProgressView!
   @IBOutlet weak var titleLabel: UILabel!
   
-  //
   // MARK: - Variables And Properties
-  //
   
   /// Delegate identifies track for this cell, then
   /// passes this to a download service method.
   var delegate: TrackCellDelegate?
   
-  //
   // MARK: - IBActions
-  //
+  
   @IBAction func cancelTapped(_ sender: AnyObject) {
     delegate?.cancelTapped(self)
   }
@@ -85,9 +79,8 @@ class TrackCell: UITableViewCell {
     }
   }
   
-  //
   // MARK: - Internal Methods
-  //
+
   // TODO 12
   func configure(track: Track, downloaded: Bool) {
     titleLabel.text = track.name

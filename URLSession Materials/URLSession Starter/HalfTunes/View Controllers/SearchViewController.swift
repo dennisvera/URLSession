@@ -62,9 +62,8 @@ class SearchViewController: UIViewController {
     return recognizer
   }()
   
-  //
   // MARK: - Internal Methods
-  //
+
   @objc func dismissKeyboard() {
     searchBar.resignFirstResponder()
   }
@@ -91,9 +90,8 @@ class SearchViewController: UIViewController {
     tableView.reloadRows(at: [IndexPath(row: row, section: 0)], with: .none)
   }
   
-  //
   // MARK: - View Controller
-  //
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     tableView.tableFooterView = UIView()
@@ -103,10 +101,10 @@ class SearchViewController: UIViewController {
   
 }
 
-//
 // MARK: - Search Bar Delegate
-//
+
 extension SearchViewController: UISearchBarDelegate {
+  
   func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
     dismissKeyboard()
     
@@ -140,9 +138,8 @@ extension SearchViewController: UISearchBarDelegate {
   }
 }
 
-//
 // MARK: - Table View Data Source
-//
+
 extension SearchViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell: TrackCell = tableView.dequeueReusableCell(withIdentifier: TrackCell.identifier,
@@ -162,9 +159,8 @@ extension SearchViewController: UITableViewDataSource {
   }
 }
 
-//
 // MARK: - Table View Delegate
-//
+
 extension SearchViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     //When user taps cell, play the local file, if it's downloaded.
@@ -183,9 +179,8 @@ extension SearchViewController: UITableViewDelegate {
   }
 }
 
-//
 // MARK: - Track Cell Delegate
-//
+
 extension SearchViewController: TrackCellDelegate {
   func cancelTapped(_ cell: TrackCell) {
     if let indexPath = tableView.indexPath(for: cell) {
